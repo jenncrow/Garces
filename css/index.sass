@@ -9,7 +9,7 @@ $medium: 900px
 
 *
   box-sizing: border-box
-  
+
 html
   font-size: 18px
   height: 100%
@@ -82,23 +82,20 @@ header
   box-sizing: border-box
   width: 100%
   margin: 0
-  padding: 15px 0
   display: flex
   flex-flow: row
   justify-content: center
+  padding: 5px 0
   background: rgba(0, 0, 0, .5)
-  z-index: 5
+  z-index: 2
   @media (max-width: $medium)
     max-width: 100%
-  @media (max-width: $mobile)
-    max-width: 100%
   .exclamation
+    margin: 0
     padding: 0 140px
-    @media (max-width: 1500)
-      margin: 0
+    @media (max-width: 1500px)
       padding: 0 500px 0 0
     @media (max-width: $mobile)
-      margin: 0
       padding: 0 350px 0 0
   @media (max-width: 1150px)
     .menu
@@ -110,9 +107,9 @@ header
       background-color: #fff
       margin: 10px 0
   .nav-bar
-    width: 100%
+    position: relative
     box-sizing: border-box
-    padding: 25px 120px 25px 0
+    padding: 20px 120px
     margin: 0
     @media (max-width: $medium)
       padding: 25px 80px 25px 0
@@ -137,9 +134,9 @@ header
           background-repeat: none
           background-size: cover
     @media (max-width: 1150px)
-      font-size: .55rem
-      padding: 0 2px
-      margin: 0
+      // font-size: .55rem
+      // padding: 0 2px
+      // margin: 0
       display: none
 
 .logo-container
@@ -154,16 +151,16 @@ header
 
 .shape-one
   width: 100%
-  height: 110px
-  margin: 10px 0 0 0
+  height: 100px
+  margin: 20px 0 0 0
   background: #f69b4c
   position: absolute
-  transform: skewY(-3deg) translateY(-65px)
+  transform: skewY(-3deg) translateY(-50px)
   z-index: -1
 
 .shape-two
   width: 100%
-  height: 120px
+  height: 90px
   margin: 0
   background: #f69b4c
   position: relative
