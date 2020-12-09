@@ -1,0 +1,446 @@
+//styles
+@font-face
+  font-family: franklin-gothic-atf, sans-serif
+  font-weight: 400
+  font-style: normal
+
+$mobile: 600px
+$medium: 900px
+
+*
+  box-sizing: border-box
+  
+html
+  font-size: 18px
+  height: 100%
+  margin: 0
+  padding: 0
+
+body
+  box-sizing: border-box
+  font-family: franklin-gothic-atf
+  min-height: 100%
+  margin: 0
+  padding: 0
+
+header
+  box-sizing: border-box
+  height: 100%
+  width: 100%
+  padding: 0
+
+@keyframes showInfo
+  from
+     opacity: 0
+     transform: translateY(0)
+  to
+    opacity: 1
+    transform: translateY(-25px)
+
+@mixin buttonChange($fontColor, $color)
+  color: $fontColor
+  background-color: $color
+
+%buttons
+  font-size: .75rem
+  border: none
+  padding: 5px 10px
+
+%paragraphs
+  color: #FFF
+  margin: 0
+  padding: 0
+
+%headings
+  color: #FFF
+  font-weight: 600
+  font-style: italic
+  margin: 0
+  padding: 0
+
+%animations
+  opacity: 0
+  &.active
+    animation: showInfo 1s linear 1s forwards
+    @for $i from 1 through 3
+        &:nth-child(#{$i})
+          animation-delay: $i * (2s / 12)
+
+.background
+  box-sizing: border-box
+  max-width: 100%
+  position: relative
+  background-image: url('../assets/file_thumb-21.cgi.png')
+  min-height: 100%
+  background-size: cover
+  background-repeat: none
+  z-index: -1
+
+.nav-container
+  position: fixed
+  top: 0
+  box-sizing: border-box
+  width: 100%
+  margin: 0
+  padding: 15px 0
+  display: flex
+  flex-flow: row
+  justify-content: center
+  background: rgba(0, 0, 0, .5)
+  z-index: 5
+  @media (max-width: $medium)
+    max-width: 100%
+  @media (max-width: $mobile)
+    max-width: 100%
+  .exclamation
+    padding: 0 140px
+    @media (max-width: 1500)
+      margin: 0
+      padding: 0 500px 0 0
+    @media (max-width: $mobile)
+      margin: 0
+      padding: 0 350px 0 0
+  @media (max-width: 1150px)
+    .menu
+      display: inline-block
+      position: relative
+    .menu-bar
+      width: 40px
+      height: 5px
+      background-color: #fff
+      margin: 10px 0
+  .nav-bar
+    width: 100%
+    box-sizing: border-box
+    padding: 25px 120px 25px 0
+    margin: 0
+    @media (max-width: $medium)
+      padding: 25px 80px 25px 0
+    @media (max-width: $mobile)
+      padding: 25px 0
+    .nav-item
+      width: 100%
+      position: relative
+      font-size: .7rem
+      color: #FFF
+      margin: 0
+      padding: 0 8px
+      &:hover
+        &::before
+          content: ''
+          position: absolute
+          left: 50%
+          width: 50%
+          height: 5px
+          transform: translateX(-50%)
+          background-image: url('../assets/Hover State.svg')
+          background-repeat: none
+          background-size: cover
+    @media (max-width: 1150px)
+      font-size: .55rem
+      padding: 0 2px
+      margin: 0
+      display: none
+
+.logo-container
+  display: flex
+  position: relative
+  justify-content: center
+  .type-logo
+    width: 75%
+    position: relative
+    margin: 0 0 90px 90px
+    padding: 0 50px 0 0
+
+.shape-one
+  width: 100%
+  height: 110px
+  margin: 10px 0 0 0
+  background: #f69b4c
+  position: absolute
+  transform: skewY(-3deg) translateY(-65px)
+  z-index: -1
+
+.shape-two
+  width: 100%
+  height: 120px
+  margin: 0
+  background: #f69b4c
+  position: relative
+  transform: skewY(-3deg) translateY(50px)
+
+.main-content
+  background-color: #f69b4c
+  box-sizing: border-box
+  height: 100%
+  position: relative
+  overflow: hidden
+  z-index: 1
+
+.intro
+  max-width: 2000px
+  display: flex
+  flex-flow: row
+  justify-content: center
+  position: relative
+  padding: 25px 0 35px 80px
+  margin: 0
+  line-height: normal
+  @media (max-width: $medium)
+    padding: 20px 0
+  @media (max-width: $mobile)
+    flex-flow: column
+    justify-content: center
+    align-items: center
+    padding: 0
+    margin: 0
+  .heading
+    @extend %headings
+    font-size: 2.5rem
+    line-height: 90%
+    @media (max-width: $medium)
+      font-size: 2rem
+    @media (max-width: $mobile)
+      font-size: 1.75rem
+  .intro-paragraph
+    @extend %paragraphs
+    margin: 0
+    padding: 25px 0 0 0
+    font-size: 1rem
+    @media (max-width: $medium)
+      font-size: 1rem
+    @media (max-width: $mobile)
+      font-size: .8rem
+  .rectangle
+    padding: 0 0 5px 0
+    position: relative
+    @media (max-width: $medium)
+      width: 14%
+  .grid-info
+    max-width: 500px
+    padding: 0 40px
+    @media (max-width: $medium)
+      width: 80%
+    @media (max-width: $mobile)
+      width: 75%
+
+.jose
+  display: flex
+  flex-direction: column
+  flex-flow: column
+  justify-content: center
+  margin: 0
+  position: relative
+  padding: 10px 0
+  @media (max-width: $medium)
+    padding: 20px 0
+  @media (max-width: $mobile)
+    margin: 0
+    padding: 70px 0
+    align-items: center
+    justify-content: center
+  .jose-image
+    padding: 5px 0
+  .jose-signature
+    padding: 2px 0
+
+.grid-container
+  box-sizing: border-box
+  display: flex
+  flex-direction: row
+  max-width: 2000
+  margin: 0
+  padding: 80px 0 80px 100px
+  justify-content: center
+  @media (max-width: $medium)
+    flex-flow: column
+    align-items: center
+    padding: 80px 0
+  @media (max-width: $mobile)
+    flex-flow: column
+    align-items: center
+    padding: 0
+  .info
+    @extend %animations
+    @extend %paragraphs
+    display: flex
+    flex-flow: column
+    align-items: center
+    max-width: 350px
+    text-align: center
+    padding: 0 30px
+    @media (max-width: $medium)
+      padding: 50px 0
+    @media (max-width: $mobile)
+      width: 100%
+      padding: 35px 0
+      &:last-of-type
+        margin-bottom: 0
+    .info-images
+      padding: 0 80px
+      @media (max-width: $medium)
+        margin: 0
+        padding: 0
+    .info-heading
+      @extend %headings
+      color: #ec2327
+      padding: 12px 0
+      font-size: 1.5rem
+      @media (max-width: medium)
+        font-size: 1.2rem
+    .info-paragraphs
+      @extend %paragraphs
+      padding: 0 0 10px 0
+      @media (max-width: $medium)
+        font-size: 1.2rem
+      @media (max-width: $mobile)
+        font-size: .8rem
+    .CTA
+      @include buttonChange(white, #ec2327)
+      @extend %buttons
+      @media (max-width: $mobile)
+        font-size: .65rem
+
+.shape-three
+  width: 0
+  height: 0
+  position: absolute
+  border-left: 15px solid transparent
+  border-right: 15px solid transparent
+  border-top: 20px solid #f69b4c
+  z-index: 1
+  margin: 0 52%
+
+.bottom-content
+  box-sizing: border-box
+  margin: 0
+  padding: 0
+  display: flex
+  max-width: 100%
+  flex-flow: row
+  position: relative
+  justify-content: left
+  height: 100%
+  background-image: url('../assets/Rectangle 6.jpg')
+  @media (max-width: $medium)
+    justify-content: center
+    align-items: center
+  @media (max-width: $mobile)
+    justify-content: center
+    align-items: center
+  .social-tag
+    @extend %headings
+    font-size: 2.5rem
+    line-height: 120%
+    padding: 15%
+    position: absolute
+    @media (max-width: $medium)
+      font-size: 2rem
+      padding: 0
+      margin: 0
+    @media (max-width: $mobile)
+      font-size: 1.75rem
+      padding: 0
+      margin: 0
+  .exclamation-two
+    position: relative
+    margin: 95px 230px
+    padding: 50px 0 0 20px
+    @media (max-width: $medium)
+      width: 30%
+      padding: 0
+      margin: 60px
+    @media (max-width: $mobile)
+      width: 25%
+      padding: 0
+      margin: 50px 0
+
+.shape-four
+  width: 100%
+  height: 110px
+  background: #ec2327
+  position: absolute
+  margin: 0
+  transform: skewY(-3deg) translateY(-50px)
+  z-index: 1
+
+.shape-five
+  width: 100%
+  height: 110px
+  margin: 0
+  background: #fff
+  position: relative
+  transform: skewY(-3deg) translateY(35px)
+  z-index: -1
+
+.footer-background
+  box-sizing: border-box
+  display: flex
+  flex-flow: row
+  height: 100%
+  margin: 0
+  justify-content: flex-end
+  padding: 0 120px 0 0
+  background-image: url('../assets/Rectangle 3.jpg')
+  @media (max-width: $medium)
+    justify-content: center
+    padding: 0
+    margin: 0
+  @media (max-width: $mobile)
+    flex-flow: column
+    justify-content: center
+    align-items: center
+    padding: 0
+  .footer-logo
+    height: 80%
+    position: relative
+    padding: 50px 20px
+    margin-right: 20px
+    z-index: 1
+    @media (max-width: $medium)
+      padding: 25px 15px
+      margin: 0
+    @media (max-width: $mobile)
+      padding: 0
+      margin: 0
+  .footer-info
+    position: relative
+    max-width: 232px
+    font-weight: 600
+    margin: 0
+    padding: 45px 50px 45px 0
+    @media (max-width: $medium)
+      padding: 20px 12px
+      max-width: 180px
+    @media (max-width: $mobile)
+      text-align: center
+      max-width: 180px
+      padding: 20px 0
+    .footer-heading
+      color: #ec2327
+      font-size: 1rem
+      padding: 0
+      margin: 0
+      font-style: italic
+      @media (max-width: $medium)
+        font-size: .75rem
+    .info
+      font-size: 1rem
+      margin: 0
+      padding: 2px 0 5px 0
+      @media (max-width: $medium)
+        font-size: .65rem
+      @media (max-width: $mobile)
+        font-size: .65rem
+    .social-icons
+      padding: 5px 0
+      @media (max-width: $medium)
+        height: 30%
+      @media (max-width: $mobile)
+        height: 10%
+
+.sbsc-CTA
+  @include buttonChange(white, black)
+  @extend %buttons
+  @media (max-width: $medium)
+    font-size: .65rem
